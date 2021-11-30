@@ -1,9 +1,9 @@
 
 
-resource "azurerm_resource_provider_registration" "reg" {
-  for_each = toset(var.providername)
-  name     = each.key
-}
+#resource "azurerm_resource_provider_registration" "reg" {
+#  for_each = toset(var.providername)
+#  name     = each.key
+#}
 resource "azurerm_resource_group" "rg" {
   name     = var.rgName
   location = var.location
