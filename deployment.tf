@@ -42,6 +42,8 @@ spec  {
     }
   }
 }
+}
+}
     resource kubernetes_service "nginxservice" {
       metadata {
         name = "nginx-service"
