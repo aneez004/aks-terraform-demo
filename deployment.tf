@@ -32,13 +32,12 @@ spec  {
           }
 
     spec {
-      containers  {
-        image = nginx:1.14.2
-
+      container  {
+        image = "nginx:1.14.2"
         name = "nginx"
 
-      ports  {
-        containerPort = 80
+        ports  {
+         containerPort = 80
       }
     }
   }
