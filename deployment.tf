@@ -20,7 +20,7 @@ resource "kubernetes_deployment" "nginx" {
 
     selector {
       match_labels = {
-        app = nginx
+        app = "nginx"
       }
     }
 
