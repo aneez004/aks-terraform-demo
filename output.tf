@@ -1,5 +1,5 @@
 #output "kube_config" {
- # value = azurerm_kubernetes_cluster.aks.kube_config_raw
+# value = azurerm_kubernetes_cluster.aks.kube_config_raw
 #}
 output "load_balancer_ip" {
   value = kubernetes_service.nginxservice.load_balancer_ingress.0.ip
@@ -9,21 +9,21 @@ output "load_balancer_ip" {
 #}
 
 #output "client_certificate" {
- #   value = azurerm_kubernetes_cluster.aks.kube_config.0.client_certificate
+#   value = azurerm_kubernetes_cluster.aks.kube_config.0.client_certificate
 #}
 
 #output "cluster_ca_certificate" {
- #   value = azurerm_kubernetes_cluster.aks.kube_config.0.cluster_ca_certificate
+#   value = azurerm_kubernetes_cluster.aks.kube_config.0.cluster_ca_certificate
 #}
 
 #output "cluster_username" {
- #   value = azurerm_kubernetes_cluster.aks.kube_config.0.username
+#   value = azurerm_kubernetes_cluster.aks.kube_config.0.username
 #}
 
 #output "cluster_password" {
- #   value = azurerm_kubernetes_cluster.aks.kube_config.0.password
+#   value = azurerm_kubernetes_cluster.aks.kube_config.0.password
 #}
 
 #output "host" {
- #   value = azurerm_kubernetes_cluster.aks.kube_config.0.host
+#   value = azurerm_kubernetes_cluster.aks.kube_config.0.host
 #}

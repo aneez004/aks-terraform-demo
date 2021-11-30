@@ -1,11 +1,11 @@
 
 
 resource "azurerm_resource_provider_registration" "reg" {
-  for_each = toset(var.providername) 
-  name = each.key
+  for_each = toset(var.providername)
+  name     = each.key
 }
 resource "azurerm_resource_group" "rg" {
-  name = var.rgName
+  name     = var.rgName
   location = var.location
 }
 
@@ -18,13 +18,13 @@ resource "azurerm_kubernetes_cluster" "aks" {
   default_node_pool {
     name       = "agentpool"
     node_count = 1
-    vm_size = "Standard_DS2_v2"
+    vm_size    = "Standard_DS2_v2"
   }
   role_based_access_control {
     enabled = true
   }
   network_profile {
-    network_plugin = "kubenet"    
+    network_plugin = "kubenet"
   }
   identity {
     type = "SystemAssigned"
