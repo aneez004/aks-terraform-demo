@@ -37,7 +37,7 @@ resource "kubernetes_deployment" "nginx" {
           name  = "nginx"
 
           port {
-            containerPort = 80
+            container_port = 80
           }
         }
       }
