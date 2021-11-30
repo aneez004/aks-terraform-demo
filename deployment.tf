@@ -5,34 +5,34 @@ provider "kubernetes" {
   cluster_ca_certificate = base64decode(azurerm_kubernetes_cluster.aks.kube_config.0.cluster_ca_certificate)
   load_config_file = false
 }
-resource kubernetes_deployment "nginx" {
+resource "kubernetes_deployment" "nginx" {
 
-metadata = {
-  labels = {
+metadata {
+  labels {
     app = "nginx"
   }
 
   name = "nginx-deployment"
 }
 
-spec = {
+spec  {
   replicas = 2
 
-  selector matchLabels {
+  selector {matchLabels {
     app = nginx
-  }
+  }}
 
-  template metadata labels {
+  template {metadata {labels {
     app = nginx
-  }
+  }}}
 
-  template spec {
-    containers = {
+    spec {
+    containers  {
       image = nginx:1.14.2
 
       name = "nginx"
 
-      ports = {
+      ports  {
         containerPort = 80
       }
     }
