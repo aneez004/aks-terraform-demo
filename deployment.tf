@@ -8,7 +8,7 @@ provider "kubernetes" {
 resource "kubernetes_deployment" "nginx" {
 
   metadata {
-    labels {
+    labels = {
       app = "nginx"
     }
 
@@ -19,7 +19,7 @@ resource "kubernetes_deployment" "nginx" {
     replicas = 2
 
     selector {
-      matchLabels = {
+      match_labels = {
         app = nginx
       }
     }
@@ -36,7 +36,7 @@ resource "kubernetes_deployment" "nginx" {
           image = "nginx:1.14.2"
           name  = "nginx"
 
-          ports {
+          port {
             containerPort = 80
           }
         }
