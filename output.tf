@@ -2,9 +2,10 @@
 # value = azurerm_kubernetes_cluster.aks.kube_config_raw
 #}
 output "load_balancer_details" {
-  value = 
-   lb_ip = kubernetes_service.nginxservice.status.0.load_balancer.0.ingress.0.ip, 
+  value = { 
+   lb_ip = kubernetes_service.nginxservice.status.0.load_balancer.0.ingress.0.ip and
    lb_hostname = kubernetes_service.nginxservice.status.0.load_balancer.0.ingress.0.hostname
+ }
 }
 #output "client_key" {
 #    value = azurerm_kubernetes_cluster.aks.kube_config.0.client_key
