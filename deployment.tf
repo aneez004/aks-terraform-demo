@@ -18,19 +18,24 @@ metadata {
 spec  {
   replicas = 2
 
-  selector {matchLabels {
+  selector {
+    matchLabels = {
     app = nginx
-  }}
+  }
+}
 
-  template {metadata {labels {
-    app = nginx
-  }}}
+  template {
+    metadata {
+      labels = {
+        app = nginx
+               }
+          }
 
     spec {
-    containers  {
-      image = nginx:1.14.2
+      containers  {
+        image = nginx:1.14.2
 
-      name = "nginx"
+        name = "nginx"
 
       ports  {
         containerPort = 80
@@ -38,10 +43,10 @@ spec  {
     }
   }
 }
-resource kubernetes_service "nginxservice" {
-  metadata {
-    name = "nginx-service"
-  }
+    resource kubernetes_service "nginxservice" {
+      metadata {
+        name = "nginx-service"
+         }
   spec {
     selector = {
       app = kubernetes_deployment.nginx.metadata.0.labels.app
