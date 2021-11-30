@@ -27,7 +27,7 @@ resource "kubernetes_deployment" "nginx" {
     template {
       metadata {
         labels = {
-          app = nginx
+          app = "nginx"
         }
       }
 
